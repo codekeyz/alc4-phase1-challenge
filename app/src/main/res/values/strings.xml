@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ALC 4 Phase 1</string>
+    <string name="about_activity">About ALC</string>
+    <string name="profile_activity">My Profile</string>
+    <string name="welcometoALC">Welcome to ALC</string>
+    <string name="my_name">Chima Precious</string>
+    <string name="track">Track:</string>
+    <string name="my_track">Android</string>
+    <string name="country">Country:</string>
+    <string name="my_country">Ghana</string>
+    <string name="email">Email:</string>
+    <string name="my_email">ositachim.co@gmail.com</string>
+    <string name="phone">Phone:</string>
+    <string name="my_phone">+233208381324</string>
+    <string name="slack">Slack Username:</string>
+    <string name="my_slack">\@codekeyz</string>
+</resources>
