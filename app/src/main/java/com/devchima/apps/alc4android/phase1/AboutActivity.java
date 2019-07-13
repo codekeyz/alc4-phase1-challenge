@@ -1,10 +1,12 @@
 package com.devchima.apps.alc4android.phase1;
 
+import android.net.http.SslError;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.SslErrorHandler;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
@@ -30,6 +32,11 @@ public class AboutActivity extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient(){
 
             @Override
+            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+                handler.proceed(); // Ignore SSL certificate errors
+            }
+
+            @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 progressBar.setVisibility(View.VISIBLE);
                 view.loadUrl(url);
@@ -41,7 +48,7 @@ public class AboutActivity extends AppCompatActivity {
             }
         });
 
-        webView.loadUrl("www.google.com");
+        webView.loadUrl("https://andela.com/alc/");
     }
 
     @Override
