@@ -1,7 +1,31 @@
 apply plugin: 'com.android.application'
 
+
+
+def secretsPropertiesFile = rootProject.file("key.properties")
+def secretProperties = new Properties()
+secretProperties.load(new FileInputStream(secretsPropertiesFile))
+
 android {
     compileSdkVersion 28
+
+    signingConfigs {
+        release {
+            keyAlias secretProperties['keyAlias']
+            keyPassword secretProperties['keyPassword']
+            storeFile file(secretProperties['storeFile'])
+            storePassword secretProperties['storePassword']
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def newApkName = applicationId + "-" + variant.versionName + ".apk"
+            outputFileName = new File(variant.name, newApkName)
+        }
+    }
+
+
     defaultConfig {
         applicationId "com.devchima.apps.alc4android.phase1"
         minSdkVersion 19
@@ -12,7 +36,9 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            signingConfig signingConfigs.release
+            useProguard true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
