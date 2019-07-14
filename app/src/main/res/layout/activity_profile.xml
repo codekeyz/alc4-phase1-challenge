@@ -52,7 +52,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/my_track"
-                android:textSize="@dimen/largerText"/>
+                style="@style/TextAppearance.AppCompat.Headline"
+               />
 
             <TextView
                 android:id="@+id/country"
@@ -72,7 +73,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/my_country"
-                android:textSize="@dimen/largerText"/>
+                style="@style/TextAppearance.AppCompat.Headline"
+                />
 
             <TextView
                 android:id="@+id/email"
@@ -92,7 +94,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/my_email"
-                android:textSize="@dimen/largerText"/>
+                style="@style/TextAppearance.AppCompat.Headline"
+                />
 
             <TextView
                 android:id="@+id/phone"
@@ -112,7 +115,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/my_phone"
-                android:textSize="@dimen/largerText"/>
+                style="@style/TextAppearance.AppCompat.Headline"
+                />
 
 
             <TextView
@@ -133,7 +137,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/my_slack"
-                android:textSize="@dimen/largerText"/>
+                style="@style/TextAppearance.AppCompat.Headline"
+                />
 
 
 
