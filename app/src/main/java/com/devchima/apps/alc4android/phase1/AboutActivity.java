@@ -13,16 +13,12 @@ import android.widget.ProgressBar;
 
 public class AboutActivity extends AppCompatActivity {
 
-    private WebView webView;
-    private ProgressBar progressBar;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        webView = findViewById(R.id.aboutWebView);
-        progressBar = findViewById(R.id.progressBar);
+        WebView webView = findViewById(R.id.aboutWebView);
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -36,16 +32,6 @@ public class AboutActivity extends AppCompatActivity {
                 handler.proceed(); // Ignore SSL certificate errors
             }
 
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                progressBar.setVisibility(View.VISIBLE);
-                view.loadUrl(url);
-                return true;
-            }
-            @Override
-            public void onPageFinished(WebView view, final String url) {
-                progressBar.setVisibility(View.GONE);
-            }
         });
 
         webView.loadUrl("https://andela.com/alc/");

@@ -15,6 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/largerText"
+        style="@style/TextAppearance.AppCompat.Headline"
         android:text="@string/welcometoALC" />
 
     <LinearLayout
@@ -32,6 +33,7 @@
             android:layout_height="wrap_content"
             android:text="@string/about_activity"
             android:textAllCaps="true"
+            style="@style/Widget.AppCompat.Button.Colored"
             />
 
         <android.support.v7.widget.AppCompatButton
@@ -40,6 +42,8 @@
             android:layout_height="wrap_content"
             android:text="@string/profile_activity"
             android:textAllCaps="true"
+            style="@style/Widget.AppCompat.Button.Colored"
+
             />
 
     </LinearLayout>
